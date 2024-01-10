@@ -1,7 +1,9 @@
 package com.bruno.desafiotodolist.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 @Entity
 @Data
@@ -17,4 +19,11 @@ public class TodoModel {
     private boolean realizado;
 
     private int prioridade;
+
+    public TodoModel(String nome, String descricao, boolean realizado, int prioridade) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.realizado = realizado;
+        this.prioridade = prioridade;
+    }
 }

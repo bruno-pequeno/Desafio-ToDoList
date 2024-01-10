@@ -2,6 +2,7 @@ package com.bruno.desafiotodolist.controllers;
 
 import com.bruno.desafiotodolist.models.TodoModel;
 import com.bruno.desafiotodolist.services.TodoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +15,7 @@ public class TodoController {
     private TodoService todoService;
 
     @PostMapping("/new")
-    public List<TodoModel> create(@RequestBody TodoModel todoCreate){
+    public List<TodoModel> create(@RequestBody @Valid TodoModel todoCreate){
         return todoService.create(todoCreate);
     }
 
